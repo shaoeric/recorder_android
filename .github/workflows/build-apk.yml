@@ -36,7 +36,7 @@ jobs:
           gradle-version: 8.5
 
       - name: Build APK
-        run: gradle assemble${{ github.event.inputs.build_type == 'release' && 'Release' || 'Debug' }} --no-daemon
+        run: gradle clean assemble${{ github.event.inputs.build_type == 'release' && 'Release' || 'Debug' }} --no-daemon --no-build-cache
 
       - name: Sign Release APK
         if: github.event.inputs.build_type == 'release'
