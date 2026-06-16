@@ -16,6 +16,9 @@ on:
           - release
         default: 'debug'
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
